@@ -48,10 +48,15 @@
             // Firebaseの認証状態を監視する
             auth.onAuthStateChanged((user) => {
                 if (user) {
+                    // サインイン済みの場合、ウェルカムメッセージを表示し、ログインフォームを非表示
                     userEmail.textContent = user.email;
                     loginForm.style.display = 'none';
                     welcomeMessage.style.display = 'block';
+
+                    // サインイン後に指定したURLにリダイレクト
+                    window.location.href = "https://prime-volleyball-club.github.io/TeamSite/";
                 } else {
+                    // サインインしていない場合は、ログインフォームを表示
                     loginForm.style.display = 'block';
                     welcomeMessage.style.display = 'none';
                 }
@@ -63,15 +68,12 @@
                 const password = document.getElementById('password').value;
 
                 auth.signInWithEmailAndPassword(email, password)
-                    .then((userCredential) => {
-                        // サインイン後にリダイレクト
-                        window.location.href = "https://prime-volleyball-club.github.io/TeamSite/";
-                    })
                     .catch((error) => {
                         alert('サインインエラー: ' + error.message);
                     });
             });
 
+            // サインアウト処理
             signOutBtn.addEventListener('click', () => {
                 auth.signOut().then(() => {
                     // サインアウト後は自動的にonAuthStateChangedが呼ばれ、UIが更新される
