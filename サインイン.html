@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase サインイン</title>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js"></script>
+</head>
+<body>
+    <h2>サインイン</h2>
+    <form id="loginForm">
+        <input type="email" id="email" placeholder="Email" required><br>
+        <input type="password" id="password" placeholder="Password" required><br>
+        <button type="submit">サインイン</button>
+    </form>
+
+    <div id="welcomeMessage" style="display: none;">
+        <h3>ようこそ、<span id="userEmail"></span></h3>
+        <button id="signOutBtn">サインアウト</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
