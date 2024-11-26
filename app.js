@@ -6,7 +6,6 @@ const firebaseConfig = {
     storageBucket: "prime-volleyball-club.firebasestorage.app",
     messagingSenderId: "952933532179",
     appId: "1:952933532179:web:022fa7e040bffa2b3735e6",
-    measurementId: "G-GY1566PD0Z"
   };
 
   // Firebaseを初期化
