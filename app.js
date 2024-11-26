@@ -1,3 +1,6 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
     apiKey: "AIzaSyAhi_UbbyiWH1GA5r1FIGdi4FTln-HeXMM",
@@ -6,11 +9,11 @@ const firebaseConfig = {
     storageBucket: "prime-volleyball-club.firebasestorage.app",
     messagingSenderId: "952933532179",
     appId: "1:952933532179:web:022fa7e040bffa2b3735e6",
-  };
+};
 
-  // Firebaseを初期化
-const app = firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
+// Firebaseを初期化
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
 // DOMが読み込まれた後に実行
 document.addEventListener('DOMContentLoaded', () => {
